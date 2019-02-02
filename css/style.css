@@ -1,3 +1,35 @@
 body {
     text-align: center;
+    background: url('../images/pat.jpg');
+}
+.lives-panel {
+    margin-top: 50px;
+    margin-bottom: -30px;
+   
+}
+
+.lives-panel .lives {
+	 margin-left: -350px;
+	text-align: center;
+    margin:0;
+    padding: 0;
+    display: inline-block;
+}
+
+.lives-panel .lives li {
+
+    list-style: none;
+    display: inline-block;
+    font-size: 25px;
+    
+}
+.glow{
+   color: #FF5733  ;
+}
+.gems{
+
+	margin-right: -350px;
+	font-size: 25px;
+	color: gold;
+
 }
