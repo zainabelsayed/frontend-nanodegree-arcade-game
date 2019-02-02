@@ -9,14 +9,14 @@
  * drawn but that is not the case. What's really happening is the entire "scene"
  * is being drawn over and over, presenting the illusion of animation.
  *
- * This engine makes the canvas' context (ctx) object globally available to make
+ * This engine makes the canvas' context (ctx) object globally available to make 
  * writing app.js a little simpler to work with.
  */
 
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
-     * set the canvas element's height/width and add it to the DOM.
+     * set the canvas elements height/width and add it to the DOM.
      */
     var doc = global.document,
         win = global.window,
@@ -93,6 +93,9 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
+        allGems.forEach(function(gem) {
+            gem.update();
+        });
         player.update();
     }
 
@@ -117,9 +120,9 @@ var Engine = (function(global) {
             numRows = 6,
             numCols = 5,
             row, col;
-
+        
         // Before drawing, clear existing canvas
-        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.clearRect(0,0,canvas.width,canvas.height)
 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
@@ -152,8 +155,12 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
+        allGems.forEach(function(gem) {
+            gem.render();
+        });
 
         player.render();
+
     }
 
     /* This function does nothing but it could have been a good place to
@@ -172,8 +179,16 @@ var Engine = (function(global) {
         'images/stone-block.png',
         'images/water-block.png',
         'images/grass-block.png',
-        'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/enemy-car.png',
+        'images/enemy-bus.png',
+        'images/enemy-school bus.png',
+        'images/char-boy.png',
+        'images/Gem Orange.png',
+        'images/Gem Green.png',
+        'images/Gem Blue.png',
+        //'images/score.png'
+        'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+
     ]);
     Resources.onReady(init);
 
